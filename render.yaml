@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: webg
+    runtime: docker
+    plan: free
+
+    envVars:
+      - key: RAILS_ENV
+        value: production
+
+      - key: RACK_ENV
+        value: production
+
+      - key: SECRET_KEY_BASE
+        generateValue: true
+databases:
+  - name: webg-db
+    plan: free
