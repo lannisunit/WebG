@@ -11,7 +11,6 @@ module WebG
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
     
-    config.action_cable.adapter = :async
     config.action_cable.mount_path = nil
     config.action_cable.url = nil
 
