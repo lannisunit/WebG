@@ -12,6 +12,8 @@ module WebG
     config.load_defaults 8.0
     
     config.action_cable.adapter = :async
+    config.action_cable.mount_path = nil
+    config.action_cable.url = nil
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
