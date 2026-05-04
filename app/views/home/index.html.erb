@@ -1,4 +1,43 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+<!-- Tabs -->
+  <div class="flex border-b">
+    <button class="tab-btn flex-1 py-2 text-center border-b-2 border-blue-500" onclick="openTab('tab1')">
+      5v5
+    </button>
+    <button class="tab-btn flex-1 py-2 text-center" onclick="openTab('tab2')">
+      Random team
+    </button>
+    <button class="tab-btn flex-1 py-2 text-center" onclick="openTab('tab3')">
+      Tỉ lệ thắng
+    </button>
+  </div>
+
+  <!-- Nội dung -->
+  <div class="p-4">
+    <div id="tab1" class="tab-content">
+    </div>
+
+    <div id="tab2" class="tab-content hidden">
+      Nội dung Random team
+    </div>
+
+    <div id="tab3" class="tab-content hidden">
+      Nội dung Tỉ lệ thắng
+    </div>
+  </div>
 </div>
+
+<script>
+function openTab(tabId) {
+  // Ẩn tất cả tab
+  document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
+
+  // Bỏ active tất cả nút
+  document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("border-blue-500"));
+
+  // Hiện tab được chọn
+  document.getElementById(tabId).classList.remove("hidden");
+
+  // Active nút
+  event.target.classList.add("border-blue-500");
+}
+</script>
