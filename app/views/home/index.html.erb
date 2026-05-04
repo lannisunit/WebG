@@ -1,205 +1,115 @@
-<!-- Tabs -->
-  <div class="flex border-b">
-    <button class="tab-btn flex-1 py-2 text-center border-b-2 border-blue-500" onclick="openTab('tab1')">
+<!-- TABS -->
+<div class="w-full">
+  <div class="flex border-b w-full text-sm md:text-base">
+    <button class="tab-btn flex-1 py-2 text-center border-b-2 border-blue-500"
+            onclick="openTab('tab1', this)">
       5v5
     </button>
-    <button class="tab-btn flex-1 py-2 text-center" onclick="openTab('tab2')">
+    <button class="tab-btn flex-1 py-2 text-center"
+            onclick="openTab('tab2', this)">
       Random team
     </button>
-    <button class="tab-btn flex-1 py-2 text-center" onclick="openTab('tab3')">
+    <button class="tab-btn flex-1 py-2 text-center"
+            onclick="openTab('tab3', this)">
       Tỉ lệ thắng
     </button>
-    <button class="tab-btn flex-1 py-2 text-center" onclick="openTab('tab4')">
+    <button class="tab-btn flex-1 py-2 text-center"
+            onclick="openTab('tab4', this)">
       Thêm thành viên
     </button>
   </div>
-
-  <!-- Nội dung -->
-  <div class="p-4">
-    <div id="tab1" class="tab-content">
-      
-    
-    <table class="table-auto border w-full text-center">
-      <tbody>
-        <!-- Team 1 -->
-    
-        <tr class="bg-black">
-          <td class="border border-black px-4 py-2 font-semibold text-white text-center">Bo 1</td>
-
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Rung.jpg", class: "mx-auto w-10 h-10 object-contain" %>
-          </td>
-
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Top.jpg", class: "mx-auto w-10 h-10 object-contain" %>
-          </td>
-
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Ad.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Ad.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Sp.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        </tr>
-    
-        <tr>
-          <td class="border border-black px-4 py-2 font-semibold bg-black text-white">Team 1</td>
-          <td class="border border-black px-4 py-2">Member 1</td>
-          <td class="border border-black px-4 py-2">Member 2</td>
-          <td class="border border-black px-4 py-2">Member 3</td>
-          <td class="border border-black px-4 py-2">Member 4</td>
-          <td class="border border-black px-4 py-2">Member 5</td>
-        </tr>
-    
-        <!-- Team 2 -->
-        <tr class="">
-          <td class="border border-black px-4 py-2 font-semibold bg-black text-white">Team 2</td>
-          <td class="border border-black px-4 py-2">Member 6</td>
-          <td class="border border-black px-4 py-2">Member 7</td>
-          <td class="border border-black px-4 py-2">Member 8</td>
-          <td class="border border-black px-4 py-2">Member 9</td>
-          <td class="border border-black px-4 py-2">Member 10</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <br><br>
-
-        <table class="table-auto border w-full text-center">
-      <tbody>
-        <!-- Team 1 -->
-    
-        <tr class="bg-black">
-          <td class="border border-black px-4 py-2 font-semibold text-white text-center">Bo 2</td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Rung.jpg", class: "mx-auto w-10 h-10 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Top.jpg", class: "mx-auto w-10 h-10 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Ad.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Ad.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Sp.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        </tr>
-    
-        <tr>
-          <td class="border border-black px-4 py-2 font-semibold bg-black text-white">Team 1</td>
-          <td class="border border-black px-4 py-2">Member 1</td>
-          <td class="border border-black px-4 py-2">Member 2</td>
-          <td class="border border-black px-4 py-2">Member 3</td>
-          <td class="border border-black px-4 py-2">Member 4</td>
-          <td class="border border-black px-4 py-2">Member 5</td>
-        </tr>
-    
-        <!-- Team 2 -->
-        <tr class="">
-          <td class="border border-black px-4 py-2 font-semibold bg-black text-white">Team 2</td>
-          <td class="border border-black px-4 py-2">Member 6</td>
-          <td class="border border-black px-4 py-2">Member 7</td>
-          <td class="border border-black px-4 py-2">Member 8</td>
-          <td class="border border-black px-4 py-2">Member 9</td>
-          <td class="border border-black px-4 py-2">Member 10</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <br><br>
-
-        <table class="table-auto border w-full text-center">
-      <tbody>
-        <!-- Team 1 -->
-    
-        <tr class="bg-black">
-          <td class="border border-black px-4 py-2 font-semibold text-white text-center">Bo 3</td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Rung.jpg", class: "mx-auto w-10 h-10 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Top.jpg", class: "mx-auto w-10 h-10 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Ad.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Ad.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        
-          <td class="border border-black bg-black text-center align-middle">
-            <%= image_tag "Sp.jpg", class: "mx-auto w-12 h-12 object-contain" %>
-          </td>
-        </tr>
-    
-        <tr>
-          <td class="border border-black px-4 py-2 font-semibold bg-black text-white">Team 1</td>
-          <td class="border border-black px-4 py-2">Member 1</td>
-          <td class="border border-black px-4 py-2">Member 2</td>
-          <td class="border border-black px-4 py-2">Member 3</td>
-          <td class="border border-black px-4 py-2">Member 4</td>
-          <td class="border border-black px-4 py-2">Member 5</td>
-        </tr>
-    
-        <!-- Team 2 -->
-        <tr class="">
-          <td class="border border-black px-4 py-2 font-semibold bg-black text-white">Team 2</td>
-          <td class="border border-black px-4 py-2">Member 6</td>
-          <td class="border border-black px-4 py-2">Member 7</td>
-          <td class="border border-black px-4 py-2">Member 8</td>
-          <td class="border border-black px-4 py-2">Member 9</td>
-          <td class="border border-black px-4 py-2">Member 10</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    </div>
-
-    <div id="tab2" class="tab-content hidden">
-      Nội dung Random team
-    </div>
-
-    <div id="tab3" class="tab-content hidden">
-      Nội dung Tỉ lệ thắng
-    </div>
-
-    <div id="tab4" class="tab-content hidden">
-      <%= link_to "Thêm thành viên", members_path %>
-    </div>
-  </div>
 </div>
 
-<script>
-function openTab(tabId) {
-  // Ẩn tất cả tab
-  document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
 
-  // Bỏ active tất cả nút
+<!-- CONTENT -->
+<div class="p-4 w-full">
+
+  <!-- TAB 1 -->
+  <div id="tab1" class="tab-content w-full">
+
+    <!-- TABLE SCROLL FIX -->
+    <div class="w-full overflow-x-auto">
+      <table class="min-w-[600px] border text-center">
+
+        <tbody>
+
+          <!-- ICON ROW -->
+          <tr class="bg-black">
+            <td class="border px-2 py-2 text-white font-semibold">Bo 1</td>
+
+            <td class="border bg-black">
+              <%= image_tag "Rung.jpg", class: "mx-auto w-8 h-8 object-contain" %>
+            </td>
+
+            <td class="border bg-black">
+              <%= image_tag "Top.jpg", class: "mx-auto w-8 h-8 object-contain" %>
+            </td>
+
+            <td class="border bg-black">
+              <%= image_tag "Ad.jpg", class: "mx-auto w-10 h-10 object-contain" %>
+            </td>
+
+            <td class="border bg-black">
+              <%= image_tag "Ad.jpg", class: "mx-auto w-10 h-10 object-contain" %>
+            </td>
+
+            <td class="border bg-black">
+              <%= image_tag "Sp.jpg", class: "mx-auto w-10 h-10 object-contain" %>
+            </td>
+          </tr>
+
+          <!-- TEAM 1 -->
+          <tr>
+            <td class="border px-2 py-2 font-semibold bg-black text-white">Team 1</td>
+            <td class="border px-2 py-2">Member 1</td>
+            <td class="border px-2 py-2">Member 2</td>
+            <td class="border px-2 py-2">Member 3</td>
+            <td class="border px-2 py-2">Member 4</td>
+            <td class="border px-2 py-2">Member 5</td>
+          </tr>
+
+          <!-- TEAM 2 -->
+          <tr>
+            <td class="border px-2 py-2 font-semibold bg-black text-white">Team 2</td>
+            <td class="border px-2 py-2">Member 6</td>
+            <td class="border px-2 py-2">Member 7</td>
+            <td class="border px-2 py-2">Member 8</td>
+            <td class="border px-2 py-2">Member 9</td>
+            <td class="border px-2 py-2">Member 10</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+  <!-- TAB 2 -->
+  <div id="tab2" class="tab-content hidden">
+    Nội dung Random team
+  </div>
+
+  <!-- TAB 3 -->
+  <div id="tab3" class="tab-content hidden">
+    Nội dung Tỉ lệ thắng
+  </div>
+
+  <!-- TAB 4 -->
+  <div id="tab4" class="tab-content hidden">
+    <%= link_to "Thêm thành viên", members_path %>
+  </div>
+
+</div>
+
+
+<!-- SCRIPT -->
+<script>
+function openTab(tabId, el) {
+  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
   document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("border-blue-500"));
 
-  // Hiện tab được chọn
   document.getElementById(tabId).classList.remove("hidden");
-
-  // Active nút
-  event.target.classList.add("border-blue-500");
+  el.classList.add("border-blue-500");
 }
 </script>
