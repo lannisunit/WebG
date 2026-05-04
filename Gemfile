@@ -4,7 +4,7 @@ gem "tailwindcss-rails", "~> 3.3.1"
 
 gem 'dotenv-rails'
 
-gem "rails", "~> 8.0.3"
+gem "rails", "~> 8.1.3"
 gem "propshaft"
 gem "pg"
 gem "puma", ">= 5.0"
