@@ -1,0 +1,47 @@
+<div class="w-full max-w-md p-2">
+
+  <%= form_with model: @team do |f| %>
+
+    <div class="mb-2">
+      <%= f.text_field :name,
+            class: "w-full border p-2 rounded",
+            placeholder: "Tên team" %>
+    </div>
+
+    <h3 class="font-semibold mb-2">
+      Chọn đúng 10 người mới chạy được nha =)))
+    </h3>
+
+    <% @members.each do |m| %>
+      <div>
+        <label>
+          <%= check_box_tag "member_ids[]", m.id %>
+          <%= m.name %>
+        </label>
+      </div>
+    <% end %>
+
+    <div class="pt-2">
+      <%= f.submit "Tạo Team",
+            class: "w-full bg-black hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition" %>
+    </div>
+
+  <% end %>
+
+</div>
+
+<div class="w-full max-w-md border-l border-black p-2">
+
+  <% latest_team_id = @teams.first&.id %>
+              
+  <% @teams.each do |team| %>
+    <div class="border p-2 mb-2">
+  
+      <% team.members.each do |m| %>
+        <div><%= m.name %></div>
+      <% end %>
+            
+    </div>
+  <% end %>
+
+</div>

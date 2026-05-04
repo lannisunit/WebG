@@ -1,8 +1,4 @@
 class MembersController < ApplicationController
-  def index
-    @members = Member.all
-  end
-
   def new
     @member = Member.new
   end
@@ -11,9 +7,9 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      redirect_to members_path
+      redirect_to root_path 
     else
-      render :new
+      redirect_to root_path
     end
   end
 

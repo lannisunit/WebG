@@ -1,13 +1,13 @@
 <!-- TABS -->
 <div class="w-full">
   <div class="flex border-b w-full text-sm md:text-base">
-    <button class="tab-btn flex-1 py-2 text-center border-b-2 border-blue-500"
+    <button class="tab-btn flex-1 py-2 text-center"
             onclick="openTab('tab1', this)">
       5v5
     </button>
     <button class="tab-btn flex-1 py-2 text-center"
             onclick="openTab('tab2', this)">
-      Random team
+      Random
     </button>
     <button class="tab-btn flex-1 py-2 text-center"
             onclick="openTab('tab3', this)">
@@ -58,25 +58,23 @@
             </td>
           </tr>
 
-          <!-- TEAM 1 -->
-          <tr>
-            <td class="border px-2 py-2 font-semibold bg-black text-white">Team 1</td>
-            <td class="border px-2 py-2">Mem 1</td>
-            <td class="border px-2 py-2">Mem 2</td>
-            <td class="border px-2 py-2">Mem 3</td>
-            <td class="border px-2 py-2">Mem 4</td>
-            <td class="border px-2 py-2">Mem 5</td>
-          </tr>
-
-          <!-- TEAM 2 -->
-          <tr>
-            <td class="border px-2 py-2 font-semibold bg-black text-white">Team 2</td>
-            <td class="border px-2 py-2">Mem 6</td>
-            <td class="border px-2 py-2">Mem 7</td>
-            <td class="border px-2 py-2">Mem 8</td>
-            <td class="border px-2 py-2">Mem 9</td>
-            <td class="border px-2 py-2">Mem 10</td>
-          </tr>
+        <!-- TEAM 1 -->
+        <tr>
+          <td class="border px-2 py-2 font-semibold bg-black text-white">Team 1</td>
+        
+          <% @team1.each do |m| %>
+            <td class="border px-2 py-2"><%= m.name %></td>
+          <% end %>
+        </tr>
+          
+        <!-- TEAM 2 -->
+        <tr>
+          <td class="border px-2 py-2 font-semibold bg-black text-white">Team 2</td>
+          
+          <% @team2.each do |m| %>
+            <td class="border px-2 py-2"><%= m.name %></td>
+          <% end %>
+        </tr>
 
         </tbody>
       </table>
@@ -86,18 +84,51 @@
 
 
   <!-- TAB 2 -->
-  <div id="tab2" class="tab-content hidden">
-    Nội dung Random team
+  <div id="tab2" class="tab-content hidden min-h-screen flex gap-1">
+    <%= render "teams/new" %>
   </div>
 
   <!-- TAB 3 -->
   <div id="tab3" class="tab-content hidden">
-    Nội dung Tỉ lệ thắng
+
+  
+
+  <table class="w-full border text-center">
+
+    <thead>
+      <tr class="bg-black text-white">
+        <th class="border px-2 py-2">Tên</th>
+        <th class="border px-2 py-2">Số lần tham gia</th>
+        <th class="border px-2 py-2">Tỉ lệ thắng</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <td class="border px-2 py-2">
+            <%= member.name %>
+          </td>
+
+          <td class="border px-2 py-2">
+            <%= member.join_count || 0 %>
+          </td>
+
+          <td class="border px-2 py-2">
+            <%= member.join_count.to_i == 0 ? 0 : (member.win_count.to_f / member.join_count * 100).round(1) %>%  
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
   </div>
 
   <!-- TAB 4 -->
   <div id="tab4" class="tab-content hidden">
-    <%= link_to "Thêm thành viên", members_path %>
+    <%= render "members/new" %>
   </div>
 
 </div>
